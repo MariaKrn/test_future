@@ -1,5 +1,5 @@
 export const getUserRepositories = async (username) => {
-  const url = `https://api.github.com/users/${username}/repos`;
+  const url = `https://api.github.com/users/${username}/repos?page=1&per_page=3`;
   return await fetch(url, {
     method: "GET",
   })

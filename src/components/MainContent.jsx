@@ -10,7 +10,7 @@ export const MainContent = () => {
 
   useEffect(() => {
     if (userName) {
-      setData(getUserRepositories(userName));
+      getUserRepositories(userName).then(setData);
     }
   }, [userName]);
 
@@ -18,7 +18,9 @@ export const MainContent = () => {
     <Paper>
       <AddressBar userName={userName} setUserName={setUserName} />
       {/*todo list for repos*/}
-      <RepositoryCard />
+      {data.map((repo) => {
+        return <RepositoryCard repo={repo} />;
+      })}
     </Paper>
   );
 };
