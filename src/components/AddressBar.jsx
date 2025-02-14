@@ -4,7 +4,7 @@ import { useDebounce } from "../utils/useDebounce";
 
 export const AddressBar = ({ userName, setUserName }) => {
   const [searchVal, setSearchVal] = useState("");
-  const debounceValue = useDebounce(searchVal, 2000);
+  const debounceValue = useDebounce(searchVal, 1000);
 
   useEffect(() => {
     setUserName(searchVal);
@@ -22,6 +22,7 @@ export const AddressBar = ({ userName, setUserName }) => {
         marginLeft: "20%",
         marginRight: "20%",
         marginTop: "5%",
+        marginBottom: "1%",
       }}
       id="filled-search"
       label="Search field"
